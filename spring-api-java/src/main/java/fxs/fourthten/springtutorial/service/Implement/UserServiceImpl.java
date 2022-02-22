@@ -2,12 +2,10 @@ package fxs.fourthten.springtutorial.service.Implement;
 
 import fxs.fourthten.springtutorial.config.exception.CustomException;
 import fxs.fourthten.springtutorial.config.security.AuthorizationUtil;
-import fxs.fourthten.springtutorial.config.security.CustomAuthorizationFilter;
 import fxs.fourthten.springtutorial.config.utility.ConstantUtil;
 import fxs.fourthten.springtutorial.config.utility.DateTimeUtil;
 import fxs.fourthten.springtutorial.domain.dto.request.user.UserFormDto;
 import fxs.fourthten.springtutorial.domain.dto.request.user.UserIdDto;
-import fxs.fourthten.springtutorial.domain.dto.response.role.RoleDto;
 import fxs.fourthten.springtutorial.domain.dto.response.user.UserDto;
 import fxs.fourthten.springtutorial.domain.model.Role;
 import fxs.fourthten.springtutorial.domain.model.User;
@@ -17,14 +15,12 @@ import fxs.fourthten.springtutorial.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

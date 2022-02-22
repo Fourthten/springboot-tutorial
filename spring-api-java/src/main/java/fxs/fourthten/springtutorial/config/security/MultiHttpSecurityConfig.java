@@ -45,9 +45,8 @@ public class MultiHttpSecurityConfig {
                             "/auth/login"
                         ).permitAll()
                         .anyRequest().authenticated()
-                    );
-//                    .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
-            http.oauth2ResourceServer()
+                    )
+                    .oauth2ResourceServer()
                     .jwt()
                     .jwtAuthenticationConverter(authenticationConverter());
         }
@@ -88,18 +87,11 @@ public class MultiHttpSecurityConfig {
             http
                     .authorizeRequests(authorize -> authorize
                         .antMatchers("/user").hasAnyRole("ADMIN", "USER")
-                        .antMatchers("/admin").hasRole("ADMIN")
+                        .antMatchers("/role").hasRole("ADMIN")
                         .antMatchers("/").permitAll()
-//                        .anyRequest().authenticated()
+                        .anyRequest().authenticated()
                     )
                     .formLogin();
-//                    .authorizeRequests()
-//                    .antMatchers("/user").hasAnyRole("ADMIN", "USER")
-//                    .antMatchers("/admin").hasRole("ADMIN")
-//                    .antMatchers("/").permitAll()
-//                    .anyRequest().authenticated()
-//                    .and()
-//                    .formLogin();
 //                    .loginPage("/login").permitAll()
 //                    .and()
 //                    .logout().permitAll();
@@ -111,15 +103,13 @@ public class MultiHttpSecurityConfig {
                     .passwordEncoder(passwordEncoder)
                     .withUser("admin")
                     .password(passwordEncoder.encode("1234"))
-//                    .password("{noop}1234")
                     .roles("ADMIN")
                     .and()
                     .withUser("user")
-//                    .password("{noop}1234")
                     .password(passwordEncoder.encode("1234"))
                     .roles("USER");
         }
     }
-
-
 }
+
+// JwtHelper, OAuthConfig

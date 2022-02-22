@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController @RequestMapping("/role") @RequiredArgsConstructor
 public class RoleWebController {
     @GetMapping("/")
-    public String getHome() {
+    public String getAllRole() {
         return "<h1>Welcome</h1>";
     }
 
-    @GetMapping("/users")
+    @GetMapping("/create")
     public String getUser() {
         return "<h1>User</h1>";
     }
 
-    @GetMapping("/admins")
-    public String getAdmin() {
+    @GetMapping("/view")
+    public String getDetail() {
         return "<h1>Admin</h1>";
     }
 }

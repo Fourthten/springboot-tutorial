@@ -1,7 +1,6 @@
 package fxs.fourthten.springtutorial.controller.api;
 
 import fxs.fourthten.springtutorial.config.security.AuthorizationUtil;
-import fxs.fourthten.springtutorial.config.security.CustomAuthorizationFilter;
 import fxs.fourthten.springtutorial.config.utility.ConstantUtil;
 import fxs.fourthten.springtutorial.domain.dto.request.role.RoleFormDto;
 import fxs.fourthten.springtutorial.domain.dto.request.role.RoleIdDto;
